@@ -26,6 +26,12 @@ public class Clicker implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("Boi");
+		JButton boi = (JButton)arg0.getSource();
+		if (boi == incButton) {
+			System.out.println("The counter is");
+		}
+		else if (boi == discButton) {
+			
+		}
 	}
 }
