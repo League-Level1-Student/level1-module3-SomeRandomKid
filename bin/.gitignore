@@ -2,11 +2,15 @@
 /BeCareful.jpg
 /Trashman.jpg
 /creepy-noise.wav
+/downKey.jpeg
 /extra/
 /fortune teller.png
 /gridworld.jar
 /jeopardy.wav
+/leftKey.jpeg
 /moo.wav
+/rightKey.jpeg
+/upKey.jpeg
 /BookOfIllusions.class
 /CowTimer.class
 /FortuneTeller.class
@@ -14,8 +18,4 @@
 /Movie.class
 /NetflixQueue.class
 /SimonSays.class
-/index.jpeg
-/rightKey.jpeg
-/leftKey.jpeg
-/downKey.jpeg
-/upKey.jpeg
+/Clicker.class
