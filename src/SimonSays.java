@@ -22,7 +22,7 @@ public class SimonSays extends KeyAdapter {
  
  // Complete steps 1 - 7 before you test
  // 1. Make a JFrame variable 
-	JFrame Why = new JFrame();
+	JFrame Why;
  	HashMap<Integer,String> images = new HashMap<Integer, String>();
  	private int imageIndex;
  	private int tries = 0;
@@ -30,11 +30,14 @@ public class SimonSays extends KeyAdapter {
  	Date timeAtStart;
  	private  void makeAlbum() {
  // 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
-  	
+ 		images.put(new Integer(KeyEvent.VK_UP), "downKey.jpg");
+ 		images.put(new Integer(KeyEvent.VK_UP), "upKey.jpg");
+ 		images.put(new Integer(KeyEvent.VK_UP), "rightKey.jpg");
+ 		images.put(new Integer(KeyEvent.VK_UP), "leftKey.jpg");
  // 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
- 
+ JOptionPane.showMessageDialog(null, "When Simon says ___, click it; otherwise, click anything other than the button called.");
  // 4. call the method to show an image
-
+ showImage();
  	}
 	public void keyPressed(KeyEvent e) {
     	int keyCode = e.getKeyCode();
@@ -55,7 +58,7 @@ public class SimonSays extends KeyAdapter {
 	}
 	private void showImage() {
     	//5. initialize your frame to a new JFrame()
-	 
+	 Why = new JFrame();
     	//6. set the frame to visible
 	
   	 //frame.add(getNextRandomImage()); //7. rename to the name of your frame
