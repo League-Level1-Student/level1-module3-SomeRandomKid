@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Netflix {
 public static void main(String[] args) {
@@ -18,5 +19,9 @@ public static void main(String[] args) {
 	hey.addMovie(kid);
 	hey.addMovie(love);
 	hey.printMovies();
+	Movie dank = hey.getBestMovie();
+	JOptionPane.showMessageDialog(null,"The best movie is " + dank.getTitle());
+	Movie RIPX = hey.getSecondBestMovie();
+	JOptionPane.showMessageDialog(null,"The second best movie is " + RIPX.getTitle());
 	}
 }
