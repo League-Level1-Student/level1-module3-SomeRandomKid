@@ -36,7 +36,7 @@ public class SimonSays extends KeyAdapter {
  		images.put(new Integer(KeyEvent.VK_UP), "rightKey.jpg");
  		images.put(new Integer(KeyEvent.VK_UP), "leftKey.jpg");
  // 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
- JOptionPane.showMessageDialog(null, "When Simon says ___, press that key; otherwise, press anything other key than the button called.");
+ JOptionPane.showMessageDialog(null, "When Simon says ___, press that key; otherwise, press anything other key than the key called.");
  // 4. call the method to show an image
  showImage();
  	}
