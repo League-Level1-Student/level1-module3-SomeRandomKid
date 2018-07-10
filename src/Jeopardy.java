@@ -63,11 +63,11 @@ public class Jeopardy implements ActionListener {
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-
+		secondButton = createButton("$800");
 		// 10. Add the secondButton to the quizPanel
-
+		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-
+		
 		// 12. Fill in the actionPerformed() method below
 
 		frame.pack();
@@ -93,10 +93,10 @@ public class Jeopardy implements ActionListener {
 		// Set the text of the button to the dollarAmount
 		boi.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
-
+		buttonCount++;
 		// Return your new button instead of the temporary button
-
-		return new JButton("temporary button");
+		
+		return boi;
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
