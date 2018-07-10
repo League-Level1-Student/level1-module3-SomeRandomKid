@@ -89,9 +89,9 @@ public class Jeopardy implements ActionListener {
 
 	private JButton createButton(String dollarAmount) {
 		// Create a new JButton
-
+		JButton boi = new JButton();
 		// Set the text of the button to the dollarAmount
-
+		boi.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
 
 		// Return your new button instead of the temporary button
