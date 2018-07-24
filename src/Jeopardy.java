@@ -29,6 +29,7 @@ public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
 	private JButton thirdButton, fourthButton;
+	private JButton fifthButton;
 
 	private JPanel quizPanel;
 	int score = 0;
@@ -57,7 +58,7 @@ public class Jeopardy implements ActionListener {
 		// 6. Use the createButton method to set the value of firstButton
 		firstButton = createButton("$400");
 		// 7. Add the firstButton to the quizPanel
-		frame.add(firstButton);
+		quizPanel.add(firstButton);
 		// 8. Write the code inside the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 
@@ -66,7 +67,21 @@ public class Jeopardy implements ActionListener {
 		secondButton = createButton("$800");
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
+		
+		thirdButton = createButton("$1200");
+		quizPanel.add(thirdButton);
+		
+		fourthButton = createButton("$1600");
+		quizPanel.add(fourthButton);
+		
+		fifthButton = createButton("$2000");
+		quizPanel.add(fifthButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
+		firstButton.addActionListener(this);
+		secondButton.addActionListener(this);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
+		fifthButton.addActionListener(this);
 		
 		// 12. Fill in the actionPerformed() method below
 
@@ -76,16 +91,18 @@ public class Jeopardy implements ActionListener {
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height,
 				Toolkit.getDefaultToolkit().getScreenSize().width);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
 
 	/*
 	 * 13. Use the method provided to play the Jeopardy theme music
-	 * 
+	 
 	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 	 *
 	 * [optional] Use the showImage or playSound methods when the user answers a
 	 * question
 	 */
+	
 
 	private JButton createButton(String dollarAmount) {
 		// Create a new JButton
@@ -101,20 +118,32 @@ public class Jeopardy implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
 		// Remove this temporary message:
-		JOptionPane.showMessageDialog(null, "pressed " + ((JButton) arg0.getSource()).getText() + " button");
 
 		// Use the method that plays the jeopardy theme music.
-
+		
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
-
+		if (buttonPressed == firstButton) {
+			askQuestion("What city is the Burj Khalifa located?", "Dubai", 400);
+		}
 		// Call the askQuestion() method
 
 		// Fill in the askQuestion() method. When you play the game, the score should
 		// change.
 
 		// Or if the buttonPressed was the secondButton
-
+		if (buttonPressed == secondButton) {
+			askQuestion("What radioactive element is considered the most expensive element ever?", "Californium", 800);
+		}
+		if (buttonPressed == thirdButton) {
+			askQuestion("What game over took the world from late 2017 to early 2018", "Fortnite", 1200);
+		}
+		if (buttonPressed == fourthButton) {
+			askQuestion("What is Ligma", "Ligma balls", 1600);
+		}
+		if (buttonPressed == fifthButton) {
+			askQuestion("Who created Apple", "The Illuminati", 2000);
+		}
 		// Call the askQuestion() method with a harder question
 
 		// Clear the button text (set the button text to nothing)
@@ -123,23 +152,32 @@ public class Jeopardy implements ActionListener {
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		String boi = JOptionPane.showInputDialog(question);
 		// Use a pop up to ask the user the question
-
+		
 		// If the answer is correct
-
+		if(boi.equals(correctAnswer)) {
+			score += prizeMoney;
+			JOptionPane.showMessageDialog(null, "Correct");
+			updateScore();
+		}
+		else {
+			score -= prizeMoney;
+			JOptionPane.showMessageDialog(null, "Ooh sorry, the answer was " + correctAnswer + "." );
+			updateScore();
+		}
 		// Increase the score by the prizeMoney
 
 		// Call the updateScore() method
-
+		
 		// Pop up a message to tell the user they were correct
-
+		
 		// Otherwise
 
 		// Decrement the score by the prizeMoney
-
+		
 		// Pop up a message to tell the user the correct answer
-
+		
 		// Call the updateScore() method
 
 	}
